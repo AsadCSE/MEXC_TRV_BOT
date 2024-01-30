@@ -1,6 +1,5 @@
-const express = require('express');
-const { createExchange } = require('@compendiumfi/pendax');
-require('dotenv').config();
+import express from 'express'
+import { createExchange } from '@compendiumfi/pendax/exchanges/exchange.js'
 
 // This Code Needs Further Review And Testing. Please Use With Caution
 
@@ -11,8 +10,8 @@ app.use(express.json());
 const mexcClient = createExchange({
     exchange: "mexc",
     authenticate: true,
-    key: process.env.MEXC_API_KEY,
-    secret: process.env.MEXC_API_SECRET
+    key: process.env.MEXC_KEY,
+    secret: process.env.MEXC_SECRET
     // Add other necessary authentication details
 });
 
@@ -67,7 +66,7 @@ function calculateTradeSize(accountInfo, symbol, side, quantityPct) {
         asset = baseAsset;
     }
 
-    const balance = accountInfo.balances.find(b => b.asset === asset);
+    const balance = accountInfo.balances?.find(b => b.asset === asset);
 
     if (!balance || parseFloat(balance.free) <= 0) {
         throw new Error(`Insufficient ${asset} balance`);
