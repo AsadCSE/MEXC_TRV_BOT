@@ -75,4 +75,4 @@ The Market BTC-USDT would apply to the "symbol" field and be translated to BTCUS
 -   Ensure that the incoming webhook signal is correctly parsed and the corresponding trades are executed on the exchange.
 
 ## Disclaimer
-This application is provided for educational purposes only. Use it at your own risk. The authors are not responsible for any financial losses incurred as a result of using this application.
+This application is provided for educational purposes only. Use it at your own risk. The authors are not responsible for any financial losses incurred as a result of using this application.# MEXC_TRV_BOT
